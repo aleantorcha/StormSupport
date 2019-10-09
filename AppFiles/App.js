@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>I just changed this again after we worked for 3 hours on the same error</Text>
+      <Text>Storm Support</Text>
     </View>
   );
 }
