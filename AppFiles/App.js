@@ -1,46 +1,21 @@
-import React from 'react';
-import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Button } from 'react-native';
-export default function App() {
+import React, { Component } from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  Button 
+} from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import Map from './src/Map'
+import PinScreen from './src/PinScreen'
 
-  return (
-    <View style = {styles.container}>
-      <MapView style = {styles.map}
-        region ={{
-          latitude: 25.7617,
-          longitude: -80.1918,
-          latitudeDelta: 0.1,
-          longitudeDelta: 0.1
-        }}
-      >
-        <MapView.Marker
-          coordinate = {{
-            latitude: 25.7617,
-            longitude: -80.1918
-          }}
-          title = {'My marker title'}
-          description = {'My marker description'}
-        />
-      </MapView>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+const Navigation = createStackNavigator({
+  HomeScreen:{
+    screen:Map
   },
-  map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+  PinScreen:{
+    screen:PinScreen
   }
-});
+})
+export default createAppContainer(Navigation);
