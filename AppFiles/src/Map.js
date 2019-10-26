@@ -6,8 +6,8 @@ const {width, height} = Dimensions.get('window')
 const SCREEN_HEIGHT = height
 const SCREEN_WIDTH = width
 const ASPECT_RATIO = width / height
-const LONGITUDE_DELTA = 0.0922
-const LATITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
+const LATTITUDE_DELTA = 0.0922
+const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO
 export default class Map extends Component {
   constructor(props){
     super(props)
@@ -20,12 +20,12 @@ export default class Map extends Component {
       },
       markerPosition: {
         //Miami
-        latitude: 25.7617,
+        lattitude: 25.7617,
         longitude: -80.1918
       }
     }
   }
-  componentDidMount(){
+  /*componentDidMount(){
     navigator.geolocation.getCurrentPosition((position) => {
       var lat = parseFloat(position.coords.latitude)
       var long = parseFloat(position.coords.latitude)
@@ -40,7 +40,7 @@ export default class Map extends Component {
       this.setState({markerPosition: initialRegion})
     },
     (error) => alert(JSON.stringify(error)))
-  }
+  }*/
 
   render() {
     return (
