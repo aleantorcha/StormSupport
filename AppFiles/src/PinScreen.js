@@ -4,15 +4,35 @@ import { Platform, StyleSheet, Text, View, Image, Button, TouchableOpacity } fro
 export default class PinScreen extends Component {
   render(){
     return (
-      <View >
-      <TouchableOpacity //style = {styles.addButton} 
-          onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+      <View style = {styles.pinformat}>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
           <Image
-          style={{width: 50, height: 50}}
-          source={require('./assets/shelter pin.png')}
+          style={{width: 165, height: 175}}
+          source={require('./pin_images/warningPin.png')}
           />
-        </TouchableOpacity>/*
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+          <Image
+          style={{width: 165, height: 175}}
+          source={require('./pin_images/workPin.png')}
+          />
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+          <Image
+          style={{width: 165, height: 175}}
+          source={require('./pin_images/usersPin.png')}
+          />
+      </TouchableOpacity>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  pinformat: {
+    flexDirection: 'row',
+  }
+});
