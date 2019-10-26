@@ -2,12 +2,7 @@ import React, {Component} from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry } from 'react-native';
 
-/*const {width, height} = Dimensions.get('window')
-const SCREEN_HEIGHT = height
-const SCREEN_WIDTH = width
-const ASPECT_RATIO = width / height
-const LATTITUDE_DELTA = 0.0922
-const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO*/
+
 export default class Map extends Component {
 
   constructor(props){
@@ -15,20 +10,8 @@ export default class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0
-      /*initialPosition: {
-        lattitude: 0,
-        longitude: 0,
-        lattitudeDelta: 0,
-        longitudeDelta: 0
-      },
-      markerPosition: {
-        //Miami
-        lattitude: 25.7617,
-        longitude: -80.1918
-      }*/
     }
   }
-  //watchID: ?number = null
   componentDidMount(){
     this.watchID = navigator.geolocation.getCurrentPosition(
       (position) => {
