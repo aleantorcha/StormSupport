@@ -39,6 +39,7 @@ export default class Map extends Component {
             coordinate = {myLocation}
             title = {'My marker title'}
             description = {'My marker description'}
+            image = {require('./pin_images/workPin.png')}
           />
         </MapView>
         <TouchableOpacity style = {styles.addButton} 
