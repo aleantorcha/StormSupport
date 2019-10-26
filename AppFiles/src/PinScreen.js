@@ -26,6 +26,20 @@ export default class PinScreen extends Component {
           source={require('./pin_images/usersPin.png')}
           />
       </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+          <Image
+          style={{width: 165, height: 175}}
+          source={require('./pin_images/housePin.png')}
+          />
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+          <Image
+          style={{width: 165, height: 175}}
+          source={require('./pin_images/questionmarkPin.png')}
+          />
+      </TouchableOpacity>
       </View>
     );
   }
