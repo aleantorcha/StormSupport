@@ -9,15 +9,7 @@ export default class PinScreen extends Component {
       onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
-          style={{width: 165, height: 175}}
-          source={require('./pin_images/CommunityHazardsButton.png')}
-          />
-      </TouchableOpacity>
-      <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
-          <Image
-          resizeMode = 'contain'
-          style={{width: 165, height: 175}}
+          style={styles.button}
           source={require('./pin_images/PersonalNeedsButton.png')}
           />
       </TouchableOpacity>
@@ -25,16 +17,24 @@ export default class PinScreen extends Component {
       onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
-          style={{width: 165, height: 175}}
-          source={require('./pin_images/QuesButton.png')}
+          style={styles.button}
+          source={require('./pin_images/CommunityHazardsButton.png')}
           />
       </TouchableOpacity>
       <TouchableOpacity
       onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
-          style={{width: 165, height: 175}}
+          style={styles.button}
           source={require('./pin_images/SheltersButton.png')}
+          />
+      </TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
+          <Image
+          resizeMode = 'contain'
+          style={styles.button}
+          source={require('./pin_images/QuesButton.png')}
           />
       </TouchableOpacity>
       </View>
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
     // width: 100,
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingVertical: 10,
 
   }
 });
