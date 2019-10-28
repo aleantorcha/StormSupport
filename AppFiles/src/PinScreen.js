@@ -6,38 +6,35 @@ export default class PinScreen extends Component {
     return (
       <View style = {styles.pinformat}>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
+          resizeMode = 'contain'
           style={{width: 165, height: 175}}
-          source={require('./pin_images/warningPin.png')}
+          source={require('./pin_images/CommunityHazardsButton.png')}
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
+          resizeMode = 'contain'
           style={{width: 165, height: 175}}
-          source={require('./pin_images/workPin.png')}
+          source={require('./pin_images/PersonalNeedsButton.png')}
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
+          resizeMode = 'contain'
           style={{width: 165, height: 175}}
-          source={require('./pin_images/usersPin.png')}
+          source={require('./pin_images/QuesButton.png')}
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
           <Image
+          resizeMode = 'contain'
           style={{width: 165, height: 175}}
-          source={require('./pin_images/housePin.png')}
-          />
-      </TouchableOpacity>
-      <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Image
-          style={{width: 165, height: 175}}
-          source={require('./pin_images/questionmarkPin.png')}
+          source={require('./pin_images/SheltersButton.png')}
           />
       </TouchableOpacity>
       </View>
@@ -47,6 +44,16 @@ export default class PinScreen extends Component {
 
 const styles = StyleSheet.create({
   pinformat: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    flex: 1,
+  },
+  button: {
+    // height: 100,
+    // width: 100,
+    flex: 1,
+    flexDirection: 'column',
+
   }
 });
