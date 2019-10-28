@@ -12,6 +12,7 @@ export default class Map extends Component {
       longitude: 0
     }
   }
+  //not sure we need this anymore
   componentDidMount(){
     this.watchID = navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -26,20 +27,53 @@ export default class Map extends Component {
 
   render() {
     let initialRegion = {
-      latitude: 200,
-      longitude: 200,
+      latitude: 25.761,
+      longitude: -80.191,
       longitudeDelta:0.01,
       latitudeDelta: 0.01
     }
     let myLocation = {latitude: this.state.latitude, longitude: this.state.longitude}
     return (
+      //create mapview
       <View style = {styles.container}>
-        <MapView style = {styles.map} initialRegion = {initialRegion}>
-          <MapView.Marker
-            coordinate = {myLocation}
-            title = {'My marker title'}
-            description = {'My marker description'}
-            image = {require('./pin_images/workPin.png')}
+        <MapView style = {styles.map} initialRegion = {initialRegion}
+        showsUserLocation
+        > 
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.753899,
+              longitude: -80.377045
+            }}
+            title = {'FIU Shelter'}
+            description = {'Maximum occupancy: 50 people'}
+            image = {require('./pin_images/houseMapPin.png')}
+          />
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.683140,
+              longitude: -80.306640
+            }}
+            title = {'Need Shutter Help'}
+            description = {'Matteo Akl needs help putting up his hurricane shutters'}
+            image = {require('./pin_images/usersMapPin.png')}
+          />
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.683140,
+              longitude: -80.306640
+            }}
+            title = {'Hazardous Cable'}
+            description = {'There is a severed electrical cable on the road'}
+            image = {require('./pin_images/warningMapPin.png')}
+          />
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.619877,
+              longitude: -80.347553
+            }}
+            title = {'Hazardous Cable'}
+            description = {'There is a severed electrical cable on the road'}
+            image = {require('./pin_images/warningMapPin.png')}
           />
         </MapView>
         <TouchableOpacity style = {styles.addButton} 
