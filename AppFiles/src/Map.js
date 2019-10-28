@@ -54,22 +54,13 @@ export default class Map extends Component {
               longitude: -80.306640
             }}
             title = {'Need Shutter Help'}
-            description = {'Matteo Akl needs help putting up his hurricane shutters'}
+            description = {'John Smith needs help putting up his hurricane shutters'}
             image = {require('./pin_images/usersMapPin.png')}
           />
           <MapView.Marker 
             coordinate = {{
-              latitude: 25.683140,
-              longitude: -80.306640
-            }}
-            title = {'Hazardous Cable'}
-            description = {'There is a severed electrical cable on the road'}
-            image = {require('./pin_images/warningMapPin.png')}
-          />
-          <MapView.Marker 
-            coordinate = {{
-              latitude: 25.619877,
-              longitude: -80.347553
+              latitude: 25.767991,
+              longitude: -80.205879 
             }}
             title = {'Hazardous Cable'}
             description = {'There is a severed electrical cable on the road'}
