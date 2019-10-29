@@ -6,7 +6,7 @@ export default class PinScreen extends Component {
     return (
       <View style = {styles.pinformat}>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
+      onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
           style={styles.button}
@@ -14,7 +14,7 @@ export default class PinScreen extends Component {
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
+      onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
           style={styles.button}
@@ -22,7 +22,7 @@ export default class PinScreen extends Component {
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
+      onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
           style={styles.button}
@@ -30,7 +30,7 @@ export default class PinScreen extends Component {
           />
       </TouchableOpacity>
       <TouchableOpacity
-      onPress={()=>this.props.navigation.navigate("CameraScreen")} style = {styles.button}>
+      onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
           <Image
           resizeMode = 'contain'
           style={styles.button}
