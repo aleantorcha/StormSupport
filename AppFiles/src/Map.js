@@ -12,7 +12,10 @@ export default class Map extends Component {
       longitude: 0
     }
   }
-  //not sure we need this anymore
+  //keep this here in case we want to share user location
+  //this can allow us to get user coordinates
+  //showsUserLocation in MapView shows a marker on the user's location already
+  //but we could use this to share one user's location with another
   componentDidMount(){
     this.watchID = navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -24,7 +27,19 @@ export default class Map extends Component {
     (error) => alert(JSON.stringify(error)),
     {enableHighAccuracy: true, timeout: 2000, maximumAge: 1})
   }
-
+  animate(){
+    let myLocation = {latitude: this.state.latitude, longitude: this.state.longitude}
+    let r = {
+        latitude: this.state.latitude,
+        longitude: this.state.longitude,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+    };
+    if ((this.state.latitude != 0) && (this.state.longitude != 0))
+    {
+      this.mapView.animateToRegion(r, 2000);
+    }
+  }
   render() {
     let initialRegion = {
       latitude: 25.761,
@@ -32,12 +47,13 @@ export default class Map extends Component {
       longitudeDelta:0.01,
       latitudeDelta: 0.01
     }
-    let myLocation = {latitude: this.state.latitude, longitude: this.state.longitude}
     return (
       //create mapview
       <View style = {styles.container}>
         <MapView style = {styles.map} initialRegion = {initialRegion}
+        ref={ref=>this.mapView = ref}
         showsUserLocation
+        onPress={()=>this.animate()}
         > 
           <MapView.Marker 
             coordinate = {{
