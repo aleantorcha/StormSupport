@@ -2,12 +2,7 @@ import React, {Component} from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry } from 'react-native';
 
-/*const {width, height} = Dimensions.get('window')
-const SCREEN_HEIGHT = height
-const SCREEN_WIDTH = width
-const ASPECT_RATIO = width / height
-const LATTITUDE_DELTA = 0.0922
-const LONGITUDE_DELTA = LATTITUDE_DELTA * ASPECT_RATIO*/
+
 export default class Map extends Component {
 
   constructor(props){
@@ -15,20 +10,9 @@ export default class Map extends Component {
     this.state = {
       latitude: 0,
       longitude: 0
-      /*initialPosition: {
-        lattitude: 0,
-        longitude: 0,
-        lattitudeDelta: 0,
-        longitudeDelta: 0
-      },
-      markerPosition: {
-        //Miami
-        lattitude: 25.7617,
-        longitude: -80.1918
-      }*/
     }
   }
-  //watchID: ?number = null
+  //not sure we need this anymore
   componentDidMount(){
     this.watchID = navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -43,19 +27,44 @@ export default class Map extends Component {
 
   render() {
     let initialRegion = {
-      latitude: 200,
-      longitude: 200,
+      latitude: 25.761,
+      longitude: -80.191,
       longitudeDelta:0.01,
       latitudeDelta: 0.01
     }
     let myLocation = {latitude: this.state.latitude, longitude: this.state.longitude}
     return (
+      //create mapview
       <View style = {styles.container}>
-        <MapView style = {styles.map} initialRegion = {initialRegion}>
-          <MapView.Marker
-            coordinate = {myLocation}
-            title = {'My marker title'}
-            description = {'My marker description'}
+        <MapView style = {styles.map} initialRegion = {initialRegion}
+        showsUserLocation
+        > 
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.753899,
+              longitude: -80.377045
+            }}
+            title = {'FIU Shelter'}
+            description = {'Maximum occupancy: 50 people'}
+            image = {require('./pin_images/houseMapPin.png')}
+          />
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.683140,
+              longitude: -80.306640
+            }}
+            title = {'Need Shutter Help'}
+            description = {'John Smith needs help putting up his hurricane shutters'}
+            image = {require('./pin_images/usersMapPin.png')}
+          />
+          <MapView.Marker 
+            coordinate = {{
+              latitude: 25.767991,
+              longitude: -80.205879 
+            }}
+            title = {'Hazardous Cable'}
+            description = {'There is a severed electrical cable on the road'}
+            image = {require('./pin_images/warningMapPin.png')}
           />
         </MapView>
         <TouchableOpacity style = {styles.addButton} 
