@@ -13,21 +13,29 @@ export default class PizzaTranslator extends Component {
       <View>
         <Text style = {styles.TitleText}>Title:</Text> 
         <TextInput
-          style={{height: 100, boarderColor:'gray', borderWidth: 1,}}
+          // style={{height: 100, boarderColor:'gray', borderWidth: 1,}}
           placeholder="Write here..."
           onChangeText={(text1) => this.setState({text1})}
           value={this.state.text1}
         />
         <Text style = {styles.TitleText}>Description:</Text> 
         <TextInput
-          style={{height: 100, boarderColor:'gray', boarderWidth: 1,}}
+          // style={{height: 100, boarderColor:'gray', boarderWidth: 1,}}
           placeholder="Write here..."
           onChangeText={(text2) => this.setState({text2})}
           value={this.state.text2}
         />
-        <TouchableOpacity style = {style.Button}
+        <Text style = {styles.TitleText}>Address:</Text> 
+        <TextInput
+          // style={{height: 100, boarderColor:'gray', boarderWidth: 1,}}
+          placeholder="Write here..."
+          onChangeText={(text3) => this.setState({text3})}
+          value={this.state.text3}
+        />
+        <TouchableOpacity
+        style = {styles.Button}
         onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Text>Next</Text>
+          <Text style = {styles.arrow}>→</Text>
         </TouchableOpacity>
       </View>
     );
@@ -37,15 +45,20 @@ const styles = StyleSheet.create({
   TitleText: {
     fontSize: 30,
     padding: 10,    
-    color: 'gray',
+    color: 'black',
   },
   Button: {
     position: 'absolute',
     width:50,height:50,
     backgroundColor: '#2f83ac',
     borderRadius:50,
-    bottom:30, right:30,
-    alignItems:'center',
-    justifyContent:'center'
+    bottom:30, 
+    right:30,
+    // alignItems:'center',
+    // justifyContent:'center'
+  },
+  arrow: {
+    color: 'white',
+    fontSize:25
   }
 });

@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
+    padding: 15,
     
   },
   button: {
