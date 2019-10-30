@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    flex: 3/5,
+    flex: 3/5, //3/5 flex fits an iPhone X screen
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
