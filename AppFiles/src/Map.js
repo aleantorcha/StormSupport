@@ -8,14 +8,12 @@ export default class Map extends Component {
   constructor(props){
     super(props)
     this.state = {
-      latitude: 0,
+      //0, 0 is default user longitude and latitude
+      latitude: 0, 
       longitude: 0
     }
   }
-  //keep this here in case we want to share user location
-  //this can allow us to get user coordinates
-  //showsUserLocation in MapView shows a marker on the user's location already
-  //but we could use this to share one user's location with another
+//componentDidMount called once when the app is opened
   componentDidMount(){
     this.watchID = navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -27,6 +25,8 @@ export default class Map extends Component {
     (error) => alert(JSON.stringify(error)),
     {enableHighAccuracy: true, timeout: 2000, maximumAge: 1})
   }
+//this function will animate the map to the user's position if the position has been retrieved
+
   animate(){
     let myLocation = {latitude: this.state.latitude, longitude: this.state.longitude}
     let r = {
@@ -53,7 +53,7 @@ export default class Map extends Component {
         <MapView style = {styles.map} initialRegion = {initialRegion}
         ref={ref=>this.mapView = ref}
         showsUserLocation
-        onPress={()=>this.animate()}
+        onLongPress={()=>this.animate()}
         > 
           <MapView.Marker 
             coordinate = {{
