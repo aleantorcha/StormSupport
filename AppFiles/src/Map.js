@@ -41,6 +41,8 @@ export default class Map extends Component {
     }
   }
   render() {
+    //initial region is Miami
+    //it cannot be set to user location because it takes a couple of seconds to retreive the user location
     let initialRegion = {
       latitude: 25.761,
       longitude: -80.191,
@@ -51,11 +53,11 @@ export default class Map extends Component {
       //create mapview
       <View style = {styles.container}>
         <MapView style = {styles.map} initialRegion = {initialRegion}
-        ref={ref=>this.mapView = ref}
-        showsUserLocation
-        onLongPress={()=>this.animate()}
+        ref={ref=>this.mapView = ref} 
+        showsUserLocation //mark users location
+        onLongPress={()=>this.animate()} //zoom in on user location on long press
         > 
-          <MapView.Marker 
+          <MapView.Marker //shelter
             coordinate = {{
               latitude: 25.753899,
               longitude: -80.377045
@@ -64,7 +66,7 @@ export default class Map extends Component {
             description = {'Maximum occupancy: 50 people'}
             image = {require('./pin_images/houseMapPin.png')}
           />
-          <MapView.Marker 
+          <MapView.Marker //personal issue
             coordinate = {{
               latitude: 25.683140,
               longitude: -80.306640
@@ -73,7 +75,7 @@ export default class Map extends Component {
             description = {'John Smith needs help putting up his hurricane shutters'}
             image = {require('./pin_images/usersMapPin.png')}
           />
-          <MapView.Marker 
+          <MapView.Marker //community issue
             coordinate = {{
               latitude: 25.767991,
               longitude: -80.205879 
@@ -83,7 +85,7 @@ export default class Map extends Component {
             image = {require('./pin_images/warningMapPin.png')}
           />
         </MapView>
-        <TouchableOpacity style = {styles.addButton} 
+        <TouchableOpacity style = {styles.addButton} //create pin button
         onPress={()=>this.props.navigation.navigate("PinScreen")}>
         <Text style={styles.plus}>+</Text>
         </TouchableOpacity>
@@ -103,6 +105,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   map: {
+    //Should take up whole screen
     position: 'absolute',
     top: 0,
     left: 0,
