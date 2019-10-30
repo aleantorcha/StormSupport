@@ -5,7 +5,7 @@ export default class Camera extends Component {
   render(){
     return (
       <View >
-        <Text>This is Camera screen</Text> 
+        <Text>New test of camera screen</Text> 
       </View>
     );
   }
