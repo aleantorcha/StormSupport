@@ -24,6 +24,6 @@ const Navigation = createStackNavigator({
   },
   CameraScreen:{
     screen:Camera
-  }
+  },
 })
 export default createAppContainer(Navigation);
