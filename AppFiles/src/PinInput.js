@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class PizzaTranslator extends Component {
+export default class PinInput extends Component {
   constructor(props) {
     super(props);
     this.state = {text:''};
