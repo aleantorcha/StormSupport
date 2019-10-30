@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 
-export default class Camera extends Component {
+export default class PinInput extends Component {
   render(){
     return (
       <View >
