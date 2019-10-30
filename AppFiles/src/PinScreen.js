@@ -5,6 +5,7 @@ export default class PinScreen extends Component {
   render(){
     return (
       <View style = {styles.pinformat}>
+      
       <TouchableOpacity
       onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
           <Image
@@ -44,19 +45,17 @@ export default class PinScreen extends Component {
 
 const styles = StyleSheet.create({
   pinformat: {
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
-    flex: 1,
+    
   },
   button: {
-    // height: 100,
-    // width: 100,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 10,
-
   }
 });
