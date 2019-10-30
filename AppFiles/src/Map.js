@@ -85,9 +85,13 @@ export default class Map extends Component {
             image = {require('./pin_images/warningMapPin.png')}
           />
         </MapView>
-        <TouchableOpacity style = {styles.addButton} //create pin button
-        onPress={()=>this.props.navigation.navigate("PinScreen")}>
-        <Text style={styles.plus}>+</Text>
+        <TouchableOpacity
+        onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
+          <Image
+          resizeMode = 'contain'
+          style={styles.addButton}
+          source={require('./otherButtons/addButton.png')}
+          />
         </TouchableOpacity>
       </View>
     );
@@ -115,8 +119,6 @@ const styles = StyleSheet.create({
   addButton: {
     position: 'absolute',
     width:50,height:50,
-    backgroundColor: '#2f83ac',
-    borderRadius:50,
     bottom:30, right:30,
     alignItems:'center',
     justifyContent:'center'

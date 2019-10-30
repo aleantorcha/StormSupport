@@ -32,11 +32,16 @@ export default class PinInput extends Component {
           onChangeText={(text3) => this.setState({text3})}
           value={this.state.text3}
         />
+
         <TouchableOpacity
+        onPress={()=>this.props.navigation.navigate("CameraScreen")}>
+          <Text style = {{color: 'blue'}}>+</Text>
+        </TouchableOpacity>
+        {/* <TouchableOpacity
         style = {styles.Button}
         onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Text style = {styles.arrow}>→</Text>
-        </TouchableOpacity>
+          <Text style = {styles.arrow}>+</Text>
+        </TouchableOpacity> */}
       </View>
     );
   }
@@ -54,8 +59,8 @@ const styles = StyleSheet.create({
     borderRadius:50,
     bottom:30, 
     right:30,
-    // alignItems:'center',
-    // justifyContent:'center'
+    alignItems:'center',
+    justifyContent:'center'
   },
   arrow: {
     color: 'white',
