@@ -66,13 +66,22 @@ export default class Map extends Component {
             description = {'Maximum occupancy: 50 people'}
             image = {require('./pin_images/houseMapPin.png')}
           />
+          <MapView.Marker //question
+            coordinate = {{
+              latitude: 25.881729,
+              longitude: -80.275040
+            }}
+            title = {'Looking for Supplies'}
+            description = {'Where do I find water and flashlight'}
+            image = {require('./pin_images/questionmarkMapPin.png')}
+          />
           <MapView.Marker //personal issue
             coordinate = {{
-              latitude: 25.683140,
-              longitude: -80.306640
+              latitude: 25.674129,
+              longitude: -80.310287
             }}
             title = {'Need Shutter Help'}
-            description = {'John Smith needs help putting up his hurricane shutters'}
+            description = {'John needs help putting up his hurricane shutters'}
             image = {require('./pin_images/usersMapPin.png')}
           />
           <MapView.Marker //community issue
@@ -128,3 +137,14 @@ const styles = StyleSheet.create({
     fontSize:25
   }
 });
+
+
+/*<MapView.Marker //hazard
+coordinate = {{
+  latitude: 25.695510,
+  longitude: -80.298660
+}}
+title = {'Tree Down'}
+description = {'Tree fell on road near 92nd street'}
+image = {require('./pin_images/warningMapPin.png')}
+/>

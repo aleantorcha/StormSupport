@@ -33,15 +33,10 @@ export default class PinInput extends Component {
           value={this.state.text3}
         />
 
-        <TouchableOpacity
+         <TouchableOpacity
         onPress={()=>this.props.navigation.navigate("CameraScreen")}>
           <Text style = {{color: 'blue'}}>+</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
-        style = {styles.Button}
-        onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Text style = {styles.arrow}>+</Text>
-        </TouchableOpacity> */}
       </View>
     );
   }
