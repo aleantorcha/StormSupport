@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    flex: 1,
+    flex: 3/5,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

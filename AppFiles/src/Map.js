@@ -77,8 +77,8 @@ export default class Map extends Component {
           />
           <MapView.Marker //personal issue
             coordinate = {{
-              latitude: 25.674129,
-              longitude: -80.310287
+              latitude: 25.767991,
+              longitude: -80.205879
             }}
             title = {'Need Shutter Help'}
             description = {'John needs help putting up his hurricane shutters'}
@@ -86,8 +86,8 @@ export default class Map extends Component {
           />
           <MapView.Marker //community issue
             coordinate = {{
-              latitude: 25.767991,
-              longitude: -80.205879 
+              latitude: 25.674129,
+              longitude: -80.310287 
             }}
             title = {'Hazardous Cable'}
             description = {'There is a severed electrical cable on the road'}
@@ -137,12 +137,3 @@ const styles = StyleSheet.create({
 });
 
 
-/*<MapView.Marker //hazard
-coordinate = {{
-  latitude: 25.695510,
-  longitude: -80.298660
-}}
-title = {'Tree Down'}
-description = {'Tree fell on road near 92nd street'}
-image = {require('./pin_images/warningMapPin.png')}
-/>
