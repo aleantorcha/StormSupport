@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class Camera extends Component {
+export default class PinInput extends Component {
   render(){
     return (
       <View>
