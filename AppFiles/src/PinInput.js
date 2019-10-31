@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class PizzaTranslator extends Component {
+export default class PinInput extends Component {
   constructor(props) {
     super(props);
     this.state = {text:''};
@@ -10,24 +10,24 @@ export default class PizzaTranslator extends Component {
 
   render() {
     return (
-      <View>
+      <View style = {{left: 10, paddingTop:15}}>
         <Text style = {styles.TitleText}>Title:</Text> 
         <TextInput
-          // style={{height: 100, boarderColor:'gray', borderWidth: 1,}}
+          style={{height: 30, width:300, borderColor:'#45818eff', borderWidth: 1, borderRadius: 6}}
           placeholder="Write here..."
           onChangeText={(text1) => this.setState({text1})}
           value={this.state.text1}
         />
         <Text style = {styles.TitleText}>Description:</Text> 
         <TextInput
-          // style={{height: 100, boarderColor:'gray', boarderWidth: 1,}}
+          style={{height: 150, width: 300, borderColor:'#45818eff', borderWidth: 1, borderRadius: 6}}
           placeholder="Write here..."
           onChangeText={(text2) => this.setState({text2})}
           value={this.state.text2}
         />
         <Text style = {styles.TitleText}>Address:</Text> 
         <TextInput
-          // style={{height: 100, boarderColor:'gray', boarderWidth: 1,}}
+          style={{height: 30, width:300, borderColor:'#45818eff', borderWidth: 1, borderRadius: 6}}
           placeholder="Write here..."
           onChangeText={(text3) => this.setState({text3})}
           value={this.state.text3}

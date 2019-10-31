@@ -145,4 +145,4 @@ coordinate = {{
 title = {'Tree Down'}
 description = {'Tree fell on road near 92nd street'}
 image = {require('./pin_images/warningMapPin.png')}
-/>
+/>*/
