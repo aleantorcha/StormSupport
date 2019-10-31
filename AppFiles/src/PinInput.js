@@ -7,6 +7,7 @@ export default class PinInput extends Component {
     this.state = {text:''};
   }
 
+  
   render() {
     return (
       <View style = {styles.container}>
