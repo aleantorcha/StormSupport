@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Platform, StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 
 export default class PinInput extends Component {
   constructor(props) {
@@ -11,7 +10,7 @@ export default class PinInput extends Component {
   
   render() {
     return (
-      <View style = {{left: 10, paddingTop:15}}>
+      <View style = {styles.container}>
         <Text style = {styles.TitleText}>Title:</Text> 
         <TextInput
           style={{height: 30, width:300, borderColor:'#45818eff', borderWidth: 1, borderRadius: 6}}
@@ -33,33 +32,39 @@ export default class PinInput extends Component {
           onChangeText={(text3) => this.setState({text3})}
           value={this.state.text3}
         />
+
         <TouchableOpacity
-        style = {styles.Button}
-        onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Text style = {styles.arrow}>→</Text>
+        onPress={()=>this.props.navigation.navigate("CameraScreen")} 
+        style = {styles.nextButton}>
+          <Image
+          resizeMode = 'contain'
+          style = {{width: 70, height: 70}}
+          source={require('./otherButtons/nextButton.png')}
+          />
         </TouchableOpacity>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 15,
+    left: 10,
+    bottom: 0,
+    right: 0,
+  },
   TitleText: {
     fontSize: 30,
     padding: 10,    
     color: 'black',
   },
-  Button: {
+  nextButton: {
     position: 'absolute',
-    width:50,height:50,
-    backgroundColor: '#2f83ac',
-    borderRadius:50,
-    bottom:30, 
-    right:30,
-    // alignItems:'center',
-    // justifyContent:'center'
+    right: 30,
+    bottom: 30,
+    alignItems:'center',
+    justifyContent:'center'
   },
-  arrow: {
-    color: 'white',
-    fontSize:25
-  }
+
 });
