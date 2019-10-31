@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry, Image } from 'react-native';
 
 
 export default class Map extends Component {
@@ -94,10 +94,16 @@ export default class Map extends Component {
             image = {require('./pin_images/warningMapPin.png')}
           />
         </MapView>
-        <TouchableOpacity style = {styles.addButton} //create pin button
-        onPress={()=>this.props.navigation.navigate("PinScreen")}>
-        <Text style={styles.plus}>+</Text>
+        <TouchableOpacity
+        onPress={()=>this.props.navigation.navigate("PinScreen")} 
+        style = {styles.addButton}>
+          <Image
+          resizeMode = 'contain'
+          style = {{width: 70, height: 70}}
+          source={require('./otherButtons/addButton.png')}
+          />
         </TouchableOpacity>
+
       </View>
     );
   }
@@ -110,8 +116,8 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems:'flex-end',
+    justifyContent:'flex-end',
   },
   map: {
     //Should take up whole screen
@@ -123,17 +129,20 @@ const styles = StyleSheet.create({
   },
   addButton: {
     position: 'absolute',
-    width:50,height:50,
-    backgroundColor: '#2f83ac',
-    borderRadius:50,
-    bottom:30, right:30,
+    right: 30,
+    bottom: 30,
     alignItems:'center',
     justifyContent:'center'
   },
-  plus: {
-    color: 'white',
-    fontSize:25
-  }
 });
 
 
+/*<MapView.Marker //hazard
+coordinate = {{
+  latitude: 25.695510,
+  longitude: -80.298660
+}}
+title = {'Tree Down'}
+description = {'Tree fell on road near 92nd street'}
+image = {require('./pin_images/warningMapPin.png')}
+/>*/

@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
-    
+    padding: 15
   },
   button: {
     flex: 3/5, //3/5 flex fits an iPhone X screen
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: 10
   }
 });
