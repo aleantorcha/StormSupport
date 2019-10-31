@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Dimensions, AppRegistry, Image } from 'react-native';
 
 
 export default class Map extends Component {
@@ -95,13 +95,15 @@ export default class Map extends Component {
           />
         </MapView>
         <TouchableOpacity
-        onPress={()=>this.props.navigation.navigate("PinInput")} style = {styles.button}>
+        onPress={()=>this.props.navigation.navigate("PinScreen")} 
+        style = {styles.addButton}>
           <Image
           resizeMode = 'contain'
-          style={styles.addButton}
+          style = {{width: 70, height: 70}}
           source={require('./otherButtons/addButton.png')}
           />
         </TouchableOpacity>
+
       </View>
     );
   }
@@ -114,8 +116,8 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems:'flex-end',
+    justifyContent:'flex-end',
   },
   map: {
     //Should take up whole screen
@@ -127,15 +129,11 @@ const styles = StyleSheet.create({
   },
   addButton: {
     position: 'absolute',
-    width:50,height:50,
-    bottom:30, right:30,
+    right: 30,
+    bottom: 30,
     alignItems:'center',
     justifyContent:'center'
   },
-  plus: {
-    color: 'white',
-    fontSize:25
-  }
 });
 
 

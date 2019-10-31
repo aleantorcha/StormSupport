@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Platform, StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 
 export default class PinInput extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ export default class PinInput extends Component {
 
   render() {
     return (
-      <View>
+      <View styles = {styles.container}>
         <Text style = {styles.TitleText}>Title:</Text> 
         <TextInput
           // style={{height: 100, boarderColor:'gray', borderWidth: 1,}}
@@ -33,15 +32,29 @@ export default class PinInput extends Component {
           value={this.state.text3}
         />
 
-         <TouchableOpacity
-        onPress={()=>this.props.navigation.navigate("CameraScreen")}>
-          <Text style = {{color: 'blue'}}>+</Text>
+        <TouchableOpacity
+        onPress={()=>this.props.navigation.navigate("CameraScreen")} 
+        style = {styles.Button}>
+          <Image
+          resizeMode = 'contain'
+          style = {{width: 70, height: 70}}
+          source={require('./otherButtons/nextButton.png')}
+          />
         </TouchableOpacity>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    // alignItems:'flex-end',
+    // justifyContent:'flex-end',
+  },
   TitleText: {
     fontSize: 30,
     padding: 10,    
@@ -49,16 +62,10 @@ const styles = StyleSheet.create({
   },
   Button: {
     position: 'absolute',
-    width:50,height:50,
-    backgroundColor: '#2f83ac',
-    borderRadius:50,
-    bottom:30, 
-    right:30,
+    right: 30,
+    bottom: 30,
     alignItems:'center',
     justifyContent:'center'
   },
-  arrow: {
-    color: 'white',
-    fontSize:25
-  }
+
 });
