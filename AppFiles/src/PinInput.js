@@ -9,7 +9,7 @@ export default class PinInput extends Component {
 
   render() {
     return (
-      <View style = {{left: 10, paddingTop:15}}>
+      <View style = {styles.container}>
         <Text style = {styles.TitleText}>Title:</Text> 
         <TextInput
           style={{height: 30, width:300, borderColor:'#45818eff', borderWidth: 1, borderRadius: 6}}
@@ -34,7 +34,7 @@ export default class PinInput extends Component {
 
         <TouchableOpacity
         onPress={()=>this.props.navigation.navigate("CameraScreen")} 
-        style = {styles.Button}>
+        style = {styles.nextButton}>
           <Image
           resizeMode = 'contain'
           style = {{width: 70, height: 70}}
@@ -46,12 +46,19 @@ export default class PinInput extends Component {
   }
 }
 const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 15,
+    left: 10,
+    bottom: 0,
+    right: 0,
+  },
   TitleText: {
     fontSize: 30,
     padding: 10,    
     color: 'black',
   },
-  Button: {
+  nextButton: {
     position: 'absolute',
     right: 30,
     bottom: 30,

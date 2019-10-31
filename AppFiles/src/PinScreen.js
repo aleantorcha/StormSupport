@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     padding: 15
-    
   },
   button: {
     flex: 1,
